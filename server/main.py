@@ -19,7 +19,7 @@ async def getMusicSingle(yt_link: str ="fvUmrVnqLV0"):
     
     url = f"https://www.youtube.com/watch?v={yt_link}"
     
-    yt = YouTube(url, on_progress_callback=on_progress)
+    yt = YouTube(url, on_progress_callback=on_progress, use_po_token=True)
     print(yt.title)
     ys = yt.streams.get_audio_only()
     ys.download(output_path=LOCAL_PATH)
